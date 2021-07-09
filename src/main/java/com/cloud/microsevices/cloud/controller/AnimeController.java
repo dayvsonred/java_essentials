@@ -54,6 +54,12 @@ public class AnimeController {
 	        		
 	    }
 	   
+	   
+	   @PostMapping(path = "save_transct")
+	   public ResponseEntity <Anime> save_transct(@RequestBody Anime anime){
+	    	return new ResponseEntity<>(animeService.save_transct(anime), HttpStatus.CREATED);
+	    }
+	   
 	   @DeleteMapping(path = "/{id}")
 	   public ResponseEntity <Void> delete(@PathVariable long id){
 		   System.out.println(dateUtil.formatLocalDateTimeToDatabaseStyle(LocalDateTime.now()));
