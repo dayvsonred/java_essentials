@@ -22,7 +22,6 @@ import com.cloud.microsevices.cloud.domain.Anime;
 import com.cloud.microsevices.cloud.dto.AnimeDto;
 import com.cloud.microsevices.cloud.service.AnimeService;
 
-import lombok.RequiredArgsConstructor;
 import utill.DateUtil;
 
 @RestController
