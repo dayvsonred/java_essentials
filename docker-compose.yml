@@ -1,27 +1,36 @@
 version : '3.3'
 services: 
-  db: 
-    image: mysql:5.7
-    restart: always
+  #db: 
+   # image: mysql:5.7
+    #restart: always
       
-    container_name: mysql
-    environment:
-      MYSQL_DATABASE: 'db'
+   #container_name: mysql
+   # environment:
+    #  MYSQL_DATABASE: 'db'
       # So you don't have to use root, but you can if you like
-      MYSQL_USER: 'user'
+     # MYSQL_USER: 'user'
       # You can use whatever password you like
-      MYSQL_PASSWORD: 'ppp'
+      #MYSQL_PASSWORD: 'ppp'
       # Password for root access
-      MYSQL_ROOT_PASSWORD: 'ppp'
-    ports:
-      - '3310:3310'
+     # MYSQL_ROOT_PASSWORD: 'ppp'
+    #ports:
+     # - '3310:3310'
       #- 3310:3310/udp
       #- 3310:3310/tcp
     #expose:
       # Opens port 3306 on the container
       #- '3310'
+    #volumes:
+      #- docker_vol:/var/lib/mysql
+  prometheus:
+    image: prom/prometheus:latest
+    container_name: prometheus
     volumes:
-      - docker_vol:/var/lib/mysql
+    - "./src/main/resources/prometheus.yml:/etc/prometheus/prometheus.yml"
+    command:
+    - "--config.file=/etc/prometheus/prometheus.yml"
+    ports:
+    - "9090:9090"
     
 volumes:
   docker_vol:

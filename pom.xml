@@ -15,9 +15,13 @@
 	<description>Project of Spring Boot for cloud microservices and geteway, circuit breacker, registre, config , messager brokers. </description>
 	<properties>
 		<java.version>11</java.version>
+		 <springdoc-openapi-ui.version>1.4.8</springdoc-openapi-ui.version>
 	</properties>
 	<dependencies>
-	
+	   <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
 	
 	
 		<dependency>
@@ -105,13 +109,31 @@
 		</dependency>
 		
 		
-		<!-- https://mvnrepository.com/artifact/com.h2database/h2 
+		<!-- https://mvnrepository.com/artifact/com.h2database/h2 --> 
 		<dependency>
 		    <groupId>com.h2database</groupId>
 		    <artifactId>h2</artifactId>
 		    <scope>test</scope>
-		</dependency>-->
+		</dependency>
 		
+		 <dependency>
+            <groupId>org.springdoc</groupId>
+            <artifactId>springdoc-openapi-ui</artifactId>
+            <version>${springdoc-openapi-ui.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springdoc</groupId>
+            <artifactId>springdoc-openapi-data-rest</artifactId>
+            <version>${springdoc-openapi-ui.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springdoc</groupId>
+            <artifactId>springdoc-openapi-security</artifactId>
+            <version>${springdoc-openapi-ui.version}</version>
+        </dependency>
+	
 	</dependencies>
 
 	<build>
